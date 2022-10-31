@@ -40,6 +40,26 @@ public class MyProductController {
         return response;
     }
 
+    @GetMapping("/get")
+    public ResponseList getListByType(@RequestParam String type){
+        ResponseList response = new ResponseList();
+        try{
+            List<MyProducts> list = service.getProductsByType(type);
+            if (!list.isEmpty()){
+                response.setCode(ResponseEnum.SUCCESS.getCode());
+                response.setDesc(ResponseEnum.SUCCESS.getDesc());
+                response.setData(list);
+            } else {
+                response.setCode(ResponseEnum.FAILED.getCode());
+                response.setDesc(ResponseEnum.FAILED.getDesc());
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+            response.setCode(ResponseEnum.EXCEPTION.getCode());
+            response.setDesc(ResponseEnum.EXCEPTION.getDesc());
+        }
+        return response;
+    }
     @GetMapping("/get/{id}")
     public ResponseData getDeviceInfoBySkuId(@PathVariable int id){
         ResponseData response = new ResponseData();

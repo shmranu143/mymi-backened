@@ -17,6 +17,7 @@ public class MyProductServiceImpl implements MyProductService{
     @Autowired
     MyProductRepo repo;
 
+
     @Override
     public MyProducts createProduct(MyProducts product) {
         try{
@@ -49,11 +50,8 @@ public class MyProductServiceImpl implements MyProductService{
 
     @Override
     public List<MyProducts> getProductsByType(String type) {
-//        MyProducts product = new MyProducts();
-//        product.setType(type);
-//        Criteria criteria = new Criterion(product);
-//        Example<MyProducts> example = new Example();
-        return null;
+        List<MyProducts> list = repo.findByType(type);
+        return list;
     }
 
     @Override
