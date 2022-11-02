@@ -1,6 +1,6 @@
 package com.mymi.responses;
 
-import com.mymi.MyProducts;
+import com.mymi.model.MyProducts;
 import lombok.Data;
 
 @Data

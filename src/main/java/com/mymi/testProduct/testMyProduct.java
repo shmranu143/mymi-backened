@@ -1,6 +1,6 @@
 //package com.mymi.testProduct;
 //
-//import com.mymi.MyProducts;
+//import com.mymi.model.MyProducts;
 //import com.mymi.service.MyProductServiceImpl;
 //import jdk.nashorn.internal.ir.annotations.Ignore;
 //

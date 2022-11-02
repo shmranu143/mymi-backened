@@ -1,6 +1,6 @@
 package com.mymi.controller;
 
-import com.mymi.MyProducts;
+import com.mymi.model.MyProducts;
 import com.mymi.ResponseEnum;
 import com.mymi.responses.Response;
 import com.mymi.responses.ResponseData;
@@ -13,13 +13,25 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/home")
 public class MyProductController {
 
     @Autowired
     MyProductServiceImpl service;
 
-    @PostMapping("/save")
+    @GetMapping("/")
+    public Response welcome(){
+        return new Response(ResponseEnum.SUCCESS.getCode(), "Welcome to my mi.com ");
+    }
+
+    @GetMapping("/ad/msg")
+    public Response welcomeAdmin(){
+        return new Response(ResponseEnum.SUCCESS.getCode(), "Welcome to my mi.com admin");
+    }
+    @GetMapping("/us/msg")
+    public Response welcomeUser(){
+        return new Response(ResponseEnum.SUCCESS.getCode(), "Welcome to my mi.com ");
+    }
+    @PostMapping("/ad/save")
     public Response AddProduct(@RequestBody MyProducts product){
         Response response = new Response();
         try{
@@ -40,7 +52,7 @@ public class MyProductController {
         return response;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/us/get")
     public ResponseList getListByType(@RequestParam String type){
         ResponseList response = new ResponseList();
         try{
@@ -60,7 +72,7 @@ public class MyProductController {
         }
         return response;
     }
-    @GetMapping("/get/{id}")
+    @GetMapping("/us/get/{id}")
     public ResponseData getDeviceInfoBySkuId(@PathVariable int id){
         ResponseData response = new ResponseData();
         try{
@@ -81,7 +93,7 @@ public class MyProductController {
         }
         return response;
     }
-    @GetMapping("/getall")
+    @GetMapping("/us/getall")
     public ResponseList getAllProducts(){
         ResponseList response = new ResponseList();
         try{

@@ -1,4 +1,4 @@
-package com.mymi;
+package com.mymi.model;
 
 import lombok.Data;
 

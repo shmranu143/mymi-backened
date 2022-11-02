@@ -1,6 +1,6 @@
 package com.mymi.service;
 
-import com.mymi.MyProducts;
+import com.mymi.model.MyProducts;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

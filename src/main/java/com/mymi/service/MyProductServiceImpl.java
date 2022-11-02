@@ -1,10 +1,7 @@
 package com.mymi.service;
 
-import com.mymi.MyProducts;
+import com.mymi.model.MyProducts;
 import com.mymi.dao.MyProductRepo;
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

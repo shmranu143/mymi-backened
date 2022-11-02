@@ -1,6 +1,6 @@
 package com.mymi.dao;
 
-import com.mymi.MyProducts;
+import com.mymi.model.MyProducts;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
